@@ -29,7 +29,7 @@ def tester(listerclass, sept=False):
     if sept: print('-' * 80)
 
 
-def testByNames(modname, classname, sept = False):
+def testByNames(modname, classname, sept=False):
     modobject = importlib.import_module(modname)
     listerclass = getattr(modobject, classname)
     tester(listerclass, sept)
