@@ -102,3 +102,51 @@ def add(mycontacts):
         print('Запись добавлена.')
     else:
         print('Это имя уже существует.')
+
+
+# изменяет текущую запись в словаре
+def change(mycontacts):
+    # Получить искомое имя
+    name = input('Введите имя: ')
+
+    if name in mycontacts:
+        # Получить новый телефонный номер и остальные атрибуты
+        phone = input('Введите новый телефонный номер: ')
+
+        phone = input('Введите новый электронный адрес: ')
+
+        entry = contact.Contact(name, phone, email)
+
+
+        # обновить запись
+        mycontacts[name] = entry
+        print('Информация обновлена.')
+    else:
+        print('Это имя не найдено. ')
+
+
+# удаляет запись
+def delete(mycontacts):
+    name = input('Введите имя: ')
+
+    if name in mycontacts:
+        del mycontacts[name]
+        print('Запись удалена.')
+    else:
+        print('Это имя не найдено.')
+
+
+# функция консервирует указанный объект и сохраняет его в файле контактов
+def save_contacts(mycontacts):
+    # открыть файл для записи
+    output_file = open('FILENAME', 'wb')
+
+    # законсервировать словарь и сохранить его в
+    pickle.dump(mycontacts, output_file)
+
+    output_file.close()
+
+if __name__ =='__main__':
+    main()
+
+
