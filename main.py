@@ -1,10 +1,17 @@
-def something(a, b, c):
-    return (a + b) * c
+from functools import wraps
+
+def decorator(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        print('doing something')
+        res = func(*args, **kwargs)
+        print('doing something after')
+        return res
+    return wrapper
 
 
-a = 10
-b = 20
-c = 3
+@decorator
+def som():
+    print('a' * 3 + '!')
+print(som)
 
-if __name__ == '__main__':
-    print(something(a, b, c))
