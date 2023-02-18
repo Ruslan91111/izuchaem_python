@@ -11,9 +11,12 @@ def decorator(func):
     return wrapper   # Возвращает функцию без вызова.
 
 
+
+
 @decorator     # Синтаксический сахар.
 def som():
     print('a' * 3 + '!')
+
 
 print(som)  # <function som at 0x7f5593ad8940>
 
@@ -31,7 +34,6 @@ print("it's was second")
 # Пробросить аргумент.
 def outer(a=1):     # Обернули в еще одну функцию.
     def decorator(func):
-        @wraps(func)     # Придает сигнатуру функции.
         def wrapper(*args, **kwargs):
             print('doing something')
             res = func(*args, **kwargs)
@@ -42,9 +44,9 @@ def outer(a=1):     # Обернули в еще одну функцию.
 
 
 @outer(123)   # Синтаксический сахар, в который уже можно передавать аргументы.
-def som():
-    print('a' * 3 + '!')
+def som(x):
+    print(x * 3)
 
-som()
+som(2)
 print("it's was third")
 
