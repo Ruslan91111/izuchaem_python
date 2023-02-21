@@ -54,6 +54,7 @@ class Descriptor:
 
 
 class Car2:
+    # Ссылка полю на класс - дескриптор
     fuel_cap = Descriptor()
 
     def __init__(self, make, model, fuel_cap):

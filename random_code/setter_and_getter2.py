@@ -14,6 +14,7 @@ class Circle:
         print("Delete radius")
         del self._radius
 
+    # Объект класса property
     radius = property(
         fget=_get_radius,
         fset=_set_radius,
