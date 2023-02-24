@@ -1,6 +1,6 @@
 # Приложение аналогичное приложению из asyncio5_2.py
 # Приложение предоставляет погоду. Но запросы осуществляются с помощью
-# синхронной библиотеки requests.
+# синхронной библиотеки requests вместо asyncio
 
 import time
 import requests
@@ -8,7 +8,7 @@ import requests
 
 def get_weather(city):
     url = f'http://api.openweathermap.org/data/2.5/weather'
-    # API ключ
+    # Ключ к API
     params = {'q': city, 'APPID': '2a4ff86f9aaa70041ec8e82db64abf56'}
 
     weather_json = requests.get(url=url, params=params).json()
@@ -28,3 +28,6 @@ print(time.strftime('%X'))
 
 main(cities)
 print(time.strftime('%X'))
+
+# Все операции выполняются последовательно(синхронно),
+# время выполнения около 3 секунд.

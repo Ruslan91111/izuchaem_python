@@ -28,6 +28,7 @@ async def main(cities_):
     for city in cities_:
         tasks.append(asyncio.create_task(get_weather(city)))
 
+    # Собрать результаты.
     results = await asyncio.gather(*tasks)
 
     for result in results:
