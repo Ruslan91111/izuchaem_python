@@ -6,3 +6,5 @@
 # doc/*.txt - игнорировать doc/notes.txt, но не doc/server/arch.txt
 # doc/**/*.txt - игнорировать все .txt файлы в каталоге doc/
 /Tony/info.dat
+/random_code/test.txt
+/random_code/test.txt
